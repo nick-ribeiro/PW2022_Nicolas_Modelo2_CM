@@ -15,7 +15,7 @@ public class TestePersistirMensalidades {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Modelo2-ModelPU");
         EntityManager em = emf.createEntityManager();
         Mensalidades m = new Mensalidades();
-        Aluguel a = em.find(Aluguel.class, 2);
+        Aluguel a = em.find(Aluguel.class, 6);
         m.setValor(2500.0);
         m.setVencimento(Calendar.getInstance());
         m.setValorPagamento(2500.0);
@@ -27,7 +27,7 @@ public class TestePersistirMensalidades {
         m.setDataPagamento(cal);
         a.adicionarMensalidades(m);
         Mensalidades m2 = new Mensalidades();
-        Aluguel a2 = em.find(Aluguel.class, 3);
+        Aluguel a2 = em.find(Aluguel.class, 7);
         m2.setValor(1100.0);
         m2.setVencimento(Calendar.getInstance());
         m2.setValorPagamento(1100.0);

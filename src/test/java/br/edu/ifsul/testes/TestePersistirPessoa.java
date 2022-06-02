@@ -13,12 +13,12 @@ public class TestePersistirPessoa {
         EntityManager em = emf.createEntityManager();
         Pessoa p = new Pessoa();
         p.setNome("Joao Silva");
-        p.setCpf("12345678910");
+        p.setCpf("123-456-789.10");
         p.setEmail("joaosilva@gmail.com");
         p.setTelefone("55991021123");
         Pessoa p2 = new Pessoa();
         p2.setNome("Luana Souza");
-        p2.setCpf("98765432109");
+        p2.setCpf("987-654-321.09");
         p2.setEmail("luanasouza@gmail.com");
         p2.setTelefone("54997076843");
         em.getTransaction().begin();

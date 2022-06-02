@@ -14,7 +14,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -32,10 +31,9 @@ public class Pessoa implements Serializable{
     @Column(name = "nome", length = 40, nullable = false)
     private String nome;
     
-    @CPF(message = "O CPF deve ser valido")
     @NotBlank(message = "O CPF não pode ser em branco")
-    @Length(max = 11, message = "O CPF não pode ter mais que {max} caracteres")
-    @Column(name = "cpf", length = 11, nullable = false)    
+    @Length(max = 14, message = "O CPF não pode ter mais que {max} caracteres")
+    @Column(name = "cpf", length = 14, nullable = false)    
     private String cpf;
     
     @NotBlank(message = "O telefone não pode ser em branco")

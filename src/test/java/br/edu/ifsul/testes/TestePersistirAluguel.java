@@ -15,7 +15,7 @@ public class TestePersistirAluguel {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Modelo2-ModelPU");
         EntityManager em = emf.createEntityManager();
         Aluguel a = new Aluguel();
-        UnidadeCondominal uc = em.find(UnidadeCondominal.class, 1);
+        UnidadeCondominal uc = em.find(UnidadeCondominal.class, 5);
         a.setValor(2500.0);
         a.setInicioContrato(Calendar.getInstance());
  
@@ -27,7 +27,7 @@ public class TestePersistirAluguel {
         a.setDiaVencimento(28);
         a.setUnidadeCondominal(uc);
         Aluguel a2 = new Aluguel();
-        UnidadeCondominal uc2 = em.find(UnidadeCondominal.class, 2);
+        UnidadeCondominal uc2 = em.find(UnidadeCondominal.class, 6);
         a2.setValor(1100.0);
         a2.setInicioContrato(Calendar.getInstance());
         a2.setFimContrato(cal);

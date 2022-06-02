@@ -1,0 +1,7 @@
+br\edu\ifsul\testes\TestePersistirCondominio.class
+br\edu\ifsul\testes\TestePersistirPessoa.class
+br\edu\ifsul\testes\TestePersistirRecurso.class
+br\edu\ifsul\testes\TestePersistirUnidadeCondominal.class
+br\edu\ifsul\testes\TestePersistirLocatario.class
+br\edu\ifsul\testes\TestePersistirMensalidades.class
+br\edu\ifsul\testes\TestePersistirAluguel.class

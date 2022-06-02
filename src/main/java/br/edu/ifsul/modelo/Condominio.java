@@ -1,20 +1,12 @@
 package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
-import java.util.Set;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -48,25 +40,9 @@ public class Condominio implements Serializable{
     @Length(max = 8, message = "O CEP não pode ter mais que {max} caracteres")
     @Column(name = "cep", length = 8, nullable = false)    
     private String cep;
-    
-    @ManyToMany
-    Set<Recurso> recurso = new HashSet<>();
-    
-    @OneToMany(mappedBy = "condominio", cascade = CascadeType.ALL, 
-            orphanRemoval = true, fetch = FetchType.LAZY)
-    List<UnidadeCondominal> unidadesCondominais = new ArrayList<>();
-    
+     
     public Condominio() {
         
-    }
-    
-    public void adicionarUnidadeCondiminal(UnidadeCondominal obj) {
-        obj.setCondominio(this);
-        this.getUnidadesCondominais().add(obj);
-    }
-    
-    public void removerUnidadeCondominal(int index) {
-        this.unidadesCondominais.remove(index);
     }
 
     public Integer getId() {
@@ -107,22 +83,6 @@ public class Condominio implements Serializable{
 
     public void setCep(String cep) {
         this.cep = cep;
-    }
-
-    public Set<Recurso> getRecurso() {
-        return recurso;
-    }
-
-    public void setRecurso(Set<Recurso> recurso) {
-        this.recurso = recurso;
-    }
-
-    public List<UnidadeCondominal> getUnidadesCondominais() {
-        return unidadesCondominais;
-    }
-
-    public void setUnidadesCondominais(List<UnidadeCondominal> unidadesCondominais) {
-        this.unidadesCondominais = unidadesCondominais;
     }
 
     @Override
