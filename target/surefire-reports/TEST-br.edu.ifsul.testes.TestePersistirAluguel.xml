@@ -4,7 +4,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.10+8-LTS-162"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.10\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Nicolas\Desktop\Quinto Semestre\Programação Web\Trabalhos\PW2022_Modelo2"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Nicolas\Desktop\Quinto Semestre\Programação Web\Trabalhos\PW2022_Modelo2_CamadaModelo"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Nicolas\Desktop\Quinto Semestre\Programação Web\Trabalhos\PW2022_Modelo2"/>
+    <property name="user.dir" value="C:\Users\Nicolas\Desktop\Quinto Semestre\Programação Web\Trabalhos\PW2022_Modelo2_CamadaModelo"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="11.0.10+8-LTS-162"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>

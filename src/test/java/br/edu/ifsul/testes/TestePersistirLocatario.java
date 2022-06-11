@@ -13,7 +13,7 @@ public class TestePersistirLocatario {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Modelo2-ModelPU");
         EntityManager em = emf.createEntityManager();
         Locatario l = new Locatario();
-        Pessoa p = em.find(Pessoa.class, 9);
+        Pessoa p = em.find(Pessoa.class, 25);
         l.setNome("Joao Silva");
         l.setCpf("12345678910");
         l.setTelefone("55991021123");
@@ -22,7 +22,7 @@ public class TestePersistirLocatario {
         l.setLocalTrabalho("R. Teixeira Soares - Centro");
         l.setTelefoneTrabalho("5599102234");      
         Locatario l2 = new Locatario();
-        Pessoa p2 = em.find(Pessoa.class, 10);
+        Pessoa p2 = em.find(Pessoa.class, 26);
         l2.setNome("Luana Souza");
         l2.setCpf("98765432109");
         l2.setTelefone("54997076843");

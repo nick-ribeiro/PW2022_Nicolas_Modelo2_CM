@@ -52,6 +52,11 @@ public class Aluguel implements Serializable{
     @NotNull(message = "O dia do venciomento deve ser informado")
     private Integer diaVencimento;
     
+    @NotNull(message = "O locatario deve ser informado")
+    @ManyToOne
+    @JoinColumn(name = "locatario", referencedColumnName = "id", nullable = false)
+    private Locatario locatario;
+    
     @NotNull(message = "A unidade condominal deve ser informada")
     @ManyToOne
     @JoinColumn(name = "unidadecondominal", referencedColumnName = "id", nullable = false)
@@ -59,7 +64,7 @@ public class Aluguel implements Serializable{
     
     @OneToMany(mappedBy = "aluguel", cascade = CascadeType.ALL, 
             orphanRemoval = true, fetch = FetchType.LAZY)
-    List<Mensalidades> mensalidades = new ArrayList<>();
+    private List<Mensalidades> mensalidades = new ArrayList<>();
     
     public Aluguel() {
         
@@ -108,6 +113,14 @@ public class Aluguel implements Serializable{
 
     public Integer getDiaVencimento() {
         return diaVencimento;
+    }
+
+    public Locatario getLocatario() {
+        return locatario;
+    }
+
+    public void setLocatario(Locatario locatario) {
+        this.locatario = locatario;
     }
 
     public void setDiaVencimento(Integer diaVencimento) {

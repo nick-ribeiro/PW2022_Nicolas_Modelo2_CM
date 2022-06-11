@@ -1,6 +1,7 @@
 package br.edu.ifsul.testes;
 
 import br.edu.ifsul.modelo.Aluguel;
+import br.edu.ifsul.modelo.Locatario;
 import br.edu.ifsul.modelo.UnidadeCondominal;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,7 +16,8 @@ public class TestePersistirAluguel {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Modelo2-ModelPU");
         EntityManager em = emf.createEntityManager();
         Aluguel a = new Aluguel();
-        UnidadeCondominal uc = em.find(UnidadeCondominal.class, 5);
+        UnidadeCondominal uc = em.find(UnidadeCondominal.class, 7);
+        Locatario l = em.find(Locatario.class, 24);
         a.setValor(2500.0);
         a.setInicioContrato(Calendar.getInstance());
  
@@ -26,13 +28,16 @@ public class TestePersistirAluguel {
         a.setFimContrato(cal);
         a.setDiaVencimento(28);
         a.setUnidadeCondominal(uc);
+        a.setLocatario(l);
         Aluguel a2 = new Aluguel();
-        UnidadeCondominal uc2 = em.find(UnidadeCondominal.class, 6);
+        UnidadeCondominal uc2 = em.find(UnidadeCondominal.class, 8);
+        Locatario l2 = em.find(Locatario.class, 25);
         a2.setValor(1100.0);
         a2.setInicioContrato(Calendar.getInstance());
         a2.setFimContrato(cal);
         a2.setDiaVencimento(28);
         a2.setUnidadeCondominal(uc2);
+        a2.setLocatario(l2);
         em.getTransaction().begin();
         em.persist(a);
         em.persist(a2);

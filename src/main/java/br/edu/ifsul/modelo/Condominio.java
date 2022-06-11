@@ -1,12 +1,21 @@
 package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
+/*import java.util.Set;*/
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+/*import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;*/
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -40,9 +49,33 @@ public class Condominio implements Serializable{
     @Length(max = 8, message = "O CEP não pode ter mais que {max} caracteres")
     @Column(name = "cep", length = 8, nullable = false)    
     private String cep;
+    
+    /*@ManyToMany
+    @JoinTable(name = "recurso",
+            joinColumns = 
+                    @JoinColumn(name = "condominio", referencedColumnName = "id", 
+                            nullable = false),
+            inverseJoinColumns = 
+                    @JoinColumn(name = "recurso", referencedColumnName = "id", 
+                            nullable = false)
+            )            
+    private Set<Recurso> recursos = new HashSet<>();*/
+    
+    @OneToMany(mappedBy = "condominio", cascade = CascadeType.ALL, 
+            orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<UnidadeCondominal> unidadesCondominais = new ArrayList<>();
      
     public Condominio() {
         
+    }
+    
+    public void adicionarUnidadeCondominal(UnidadeCondominal obj) {
+        obj.setCondominio(this);
+        this.getUnidadesCondominais().add(obj);
+    }
+    
+    public void removerUnidadeCondominal(int index) {
+        this.unidadesCondominais.remove(index);
     }
 
     public Integer getId() {
@@ -83,6 +116,22 @@ public class Condominio implements Serializable{
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    /*public Set<Recurso> getRecursos() {
+        return recursos;
+    }
+
+    public void setRecursos(Set<Recurso> recursos) {
+        this.recursos = recursos;
+    }*/
+   
+    public List<UnidadeCondominal> getUnidadesCondominais() {
+        return unidadesCondominais;
+    }
+
+    public void setUnidadescondominais(List<UnidadeCondominal> unidadesCondominais) {
+        this.unidadesCondominais = unidadesCondominais;
     }
 
     @Override

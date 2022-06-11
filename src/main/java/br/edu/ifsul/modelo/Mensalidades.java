@@ -49,7 +49,7 @@ public class Mensalidades implements Serializable{
     
     @NotNull(message = "O aluguel deve ser informado")
     @ManyToOne
-    @JoinColumn(name = "aluguel_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "aluguel", referencedColumnName = "id", nullable = false)
     private Aluguel aluguel;
     
     public Mensalidades() {
