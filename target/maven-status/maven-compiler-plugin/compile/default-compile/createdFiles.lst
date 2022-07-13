@@ -1,6 +1,8 @@
+br\edu\ifsul\modelo\Permissao.class
 br\edu\ifsul\modelo\Aluguel.class
 br\edu\ifsul\modelo\UnidadeCondominal.class
 br\edu\ifsul\modelo\Pessoa.class
+br\edu\ifsul\modelo\FabricaObjeto.class
 br\edu\ifsul\modelo\Locatario.class
 br\edu\ifsul\modelo\Condominio.class
 br\edu\ifsul\modelo\Recurso.class

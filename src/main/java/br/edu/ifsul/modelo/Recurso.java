@@ -1,16 +1,16 @@
 package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
-/*import java.util.ArrayList;
-import java.util.List;*/
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-/*import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;*/
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -31,8 +31,8 @@ public class Recurso implements Serializable{
     @Column(name = "descricao", length = 30, nullable = false)
     private String descricao;
     
-    /*@ManyToMany
-    @JoinTable(name = "condominio",
+    @ManyToMany
+    @JoinTable(name = "recurso_condominio",
             joinColumns = 
                     @JoinColumn(name = "recurso", referencedColumnName = "id", 
                             nullable = false),
@@ -40,7 +40,7 @@ public class Recurso implements Serializable{
                     @JoinColumn(name = "condominio", referencedColumnName = "id", 
                             nullable = false)
             )            
-    private List<Condominio> condominios = new ArrayList<>();*/
+    private List<Condominio> condominios = new ArrayList<>();
 
     public Recurso() {
         
@@ -62,11 +62,11 @@ public class Recurso implements Serializable{
         this.descricao = descricao;
     }
 
-    /*public List<Condominio> getCondominios() {
+    public List<Condominio> getCondominios() {
         return condominios;
     }
 
     public void setCondominios(List<Condominio> condominios) {
         this.condominios = condominios;
-    }*/
+    }
 }

@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
-/*import java.util.Set;*/
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-/*import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;*/
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -50,16 +50,16 @@ public class Condominio implements Serializable{
     @Column(name = "cep", length = 8, nullable = false)    
     private String cep;
     
-    /*@ManyToMany
-    @JoinTable(name = "recurso",
+    @ManyToMany
+    @JoinTable(name = "condominio_recurso",
             joinColumns = 
                     @JoinColumn(name = "condominio", referencedColumnName = "id", 
                             nullable = false),
             inverseJoinColumns = 
                     @JoinColumn(name = "recurso", referencedColumnName = "id", 
                             nullable = false)
-            )            
-    private Set<Recurso> recursos = new HashSet<>();*/
+            )
+    private List<UnidadeCondominal> recursos = new ArrayList<>();
     
     @OneToMany(mappedBy = "condominio", cascade = CascadeType.ALL, 
             orphanRemoval = true, fetch = FetchType.LAZY)
@@ -118,13 +118,13 @@ public class Condominio implements Serializable{
         this.cep = cep;
     }
 
-    /*public Set<Recurso> getRecursos() {
+    public List<UnidadeCondominal> getRecursos() {
         return recursos;
     }
 
-    public void setRecursos(Set<Recurso> recursos) {
+    public void setRecursos(List<UnidadeCondominal> recursos) {
         this.recursos = recursos;
-    }*/
+    }
    
     public List<UnidadeCondominal> getUnidadesCondominais() {
         return unidadesCondominais;
