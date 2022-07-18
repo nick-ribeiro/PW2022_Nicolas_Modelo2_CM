@@ -51,7 +51,7 @@ public class UnidadeCondominal implements Serializable{
     
     @NotNull(message = "A pessoa deve ser informada")
     @ManyToOne
-    @JoinColumn(name = "pessoa", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "pessoa", referencedColumnName = "cpf", nullable = false)
     private Pessoa pessoa;
     
     public UnidadeCondominal() {

@@ -46,7 +46,7 @@ public class Permissao implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.nome);
+        hash = 79 * hash + Objects.hashCode(this.nome);
         return hash;
     }
 
@@ -62,6 +62,9 @@ public class Permissao implements Serializable {
             return false;
         }
         final Permissao other = (Permissao) obj;
-        return Objects.equals(this.nome, other.nome);
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return true;
     }
 }
